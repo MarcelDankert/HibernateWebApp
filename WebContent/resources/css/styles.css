@@ -1,0 +1,11 @@
+body{
+	background-color: blue;
+	
+}
+#wrapper{
+	text-align: center;
+	border: 2px dashed white;
+}
+h1 {
+	color: white;
+}

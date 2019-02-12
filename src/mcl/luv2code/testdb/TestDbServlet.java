@@ -18,7 +18,8 @@ import java.sql.*;
  * also im Moment der Anfrage, erstellt werden und muss nicht bereits statisch 
  * (etwa in Form einer HTML-Seite) für den Webserver verfügbar sein
  */
-@WebServlet("/TestDbServlet")
+
+//@WebServlet("/TestDbServlet")
 public class TestDbServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -27,7 +28,7 @@ public class TestDbServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Verbindungsvariablen erstellen
-		String jdbcUrl = "jdbc:mysql://localhost:3306/nordwind?serverTimezone=UTC&useSSL=false";
+		String jdbcUrl = "jdbc:mysql://localhost:3306/hibernate_tutorial?serverTimezone=UTC&useSSL=false";
 		String user = "root";
 		String pw = "";
 		String driver = "com.mysql.cj.jdbc.Driver";
