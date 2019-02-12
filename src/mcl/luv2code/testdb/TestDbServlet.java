@@ -19,7 +19,7 @@ import java.sql.*;
  * (etwa in Form einer HTML-Seite) für den Webserver verfügbar sein
  */
 
-//@WebServlet("/TestDbServlet")
+@WebServlet("/TestDbServlet")
 public class TestDbServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

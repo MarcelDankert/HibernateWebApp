@@ -1,4 +1,4 @@
-package mcl.luv2code.springdemo.entitaetsklassen;
+package mcl.luv2code.entitaetsklassen;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
