@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                      http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	version="4.0" metadata-complete="true" id="WebApp_ID">
+
+	<display-name>spring-mvc-demo</display-name>
+
+	<!-- Spring MVC Configs -->
+
+	<!-- Step 1: Configure Spring MVC Dispatcher Servlet 
+	Als Servlets bezeichnet man Java-Klassen, deren Instanzen innerhalb eines Webservers 
+	Anfragen von Clients entgegennehmen und beantworten. 
+	Der Inhalt der Antworten kann dabei dynamisch, also im Moment der Anfrage, 
+	erstellt werden und muss nicht bereits statisch (etwa in Form einer HTML-Seite) für den Webserver verfügbar sein.
+	Ein Servlet wird implementiert, indem eine Klasse erstellt wird, 
+	die die Schnittstelle javax.servlet.Servlet implementiert. 
+	Es gibt die Klasse javax.servlet.http.HttpServlet, die diesen Vorgang vereinfacht. 
+	Anschließend wird eine oder beide Methoden doGet und doPost überschrieben, 
+	um die beiden wichtigsten HTTP-Methoden GET und POST verarbeiten zu können.-->
+	<servlet>
+		<servlet-name>dispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring-mvc-demo-servlet.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<!-- Step 2: Set up URL mapping for Spring MVC Dispatcher Servlet -->
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+</web-app>
