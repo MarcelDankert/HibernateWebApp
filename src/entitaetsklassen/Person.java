@@ -11,7 +11,7 @@ import javax.persistence.Table;
 // Als Entität markieren und mit der Tabelle verknüpfen
 @Entity
 @Table(name="tbl_personen")
-public class Personen {
+public class Person {
 	// Attribute deklarieren und mit den Tabellenspalten verknüpfen
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -25,7 +25,7 @@ public class Personen {
 	private String land;
 	
 	// Konstruktor
-	public Personen() {
+	public Person() {
 	}
 	// Getter und Setter
 	public int getPersonenNr() {
