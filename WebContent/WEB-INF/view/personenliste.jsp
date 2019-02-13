@@ -21,6 +21,7 @@
 						<th>Nachname</th>
 						<th>Land</th>
 					</tr>
+					<!-- Mit Hilfe der importierten jstl-core lib kann durch die Liste iteriert werden -->
 					<c:forEach var="tempPersonen" items="${personen}">
 						<tr>
 							<td>${tempPersonen.vorname}</td>
