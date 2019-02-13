@@ -1,4 +1,4 @@
-package mcl.luv2code.entitaetsklassen;
+package entitaetsklassen;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

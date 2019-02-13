@@ -1,4 +1,4 @@
-package mcl.luv2code.testdb;
+package testdb;
 
 import java.io.IOException;
 import java.io.PrintWriter;
