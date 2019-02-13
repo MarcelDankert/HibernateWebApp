@@ -24,9 +24,10 @@ public class PersonenController {
 		// Personen über die DAO_Klasse abspeichern
 		List<Person> personen = personDAO.getPerson();
 		
-		// Liste ans Model anhängen
-		model.addAttribute(personen);
+		// Liste als Key/Value-Paar ans Model anhängen
+		model.addAttribute("personen", personen);
 		
+		// entspricht http://localhost:8080/HibernateWebApp/personen/liste
 		return "personenliste";
 	}
 }

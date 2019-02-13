@@ -20,7 +20,7 @@ public class Person {
 	@Column(name="vorname")
 	private String vorname;
 	@Column(name="nachname")
-	private int nachname;
+	private String nachname;
 	@Column(name="land")
 	private String land;
 	
@@ -44,11 +44,11 @@ public class Person {
 		this.vorname = vorname;
 	}
 
-	public int getNachname() {
+	public String getNachname() {
 		return nachname;
 	}
 
-	public void setNachname(int nachname) {
+	public void setNachname(String nachname) {
 		this.nachname = nachname;
 	}
 

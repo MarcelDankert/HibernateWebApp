@@ -12,7 +12,8 @@ import org.springframework.stereotype.Repository;
 
 import entitaetsklassen.Person;
 
-@Repository //kennzeichnet eine Klasse als DAO=Klasse, wichtig fürs Exception-Handling
+//kennzeichnet eine Klasse als DAO=Klasse, wichtig fürs Exception-Handling
+@Repository 
 public class PersonDAOImpl implements PersonDAO {
 
 	@Autowired // holt bean aus der config-xml
@@ -31,10 +32,13 @@ public class PersonDAOImpl implements PersonDAO {
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		// Abfrage schreiben - Import beachten
-		Query<Person> query =  currentSession.createQuery("from person", Person.class);
+		Query<Person> query =  currentSession.createQuery("from Person", Person.class);
 		
+		// Abfrage ausführen und in die Liste speichern
 		List<Person> personen = query.getResultList();
 		
+		
+		// Liste ausgeben
 		return personen;
 	}
 
