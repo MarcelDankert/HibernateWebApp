@@ -19,13 +19,7 @@ public class PersonDAOImpl implements PersonDAO {
 	@Autowired // holt bean aus der config-xml
 	private SessionFactory sessionFactory;
 	
-	/*
-	 * @Transactional übernimmt die Methoden der Session Factory.
-	 * Dadurch spart man "session.beginTransaction();" und
-	 * session.getTransaction().commit();
-	 */
-	@Override
-	@Transactional	
+	@Override	
 	public List<Person> getPerson() {
 		
 		// Hibernate Session starten
