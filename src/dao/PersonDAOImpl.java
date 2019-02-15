@@ -26,7 +26,7 @@ public class PersonDAOImpl implements PersonDAO {
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		// Abfrage schreiben - Import beachten
-		Query<Person> query =  currentSession.createQuery("from Person", Person.class);
+		Query<Person> query =  currentSession.createQuery("from Person order by nachname", Person.class);
 		
 		// Abfrage ausführen und in die Liste speichern
 		List<Person> personen = query.getResultList();
@@ -34,6 +34,20 @@ public class PersonDAOImpl implements PersonDAO {
 		
 		// Liste ausgeben
 		return personen;
+	}
+
+	/* (non-Javadoc)
+	 * @see dao.PersonDAO#personSpeichern(entitaetsklassen.Person)
+	 */
+	@Override
+	public void personSpeichern(Person person) {
+
+		// Hibernate Session starten
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		// Person speichern
+		currentSession.save(person);
+		
 	}
 
 }

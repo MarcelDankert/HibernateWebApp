@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 
 // Als Entität markieren und mit der Tabelle verknüpfen
 @Entity
@@ -14,7 +16,8 @@ import javax.persistence.Table;
 public class Person {
 	// Attribute deklarieren und mit den Tabellenspalten verknüpfen
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GenericGenerator(name="kaugen" , strategy="increment")
+	@GeneratedValue(generator="kaugen")
 	@Column(name="personennr")
 	private int personenNr;
 	@Column(name="vorname")

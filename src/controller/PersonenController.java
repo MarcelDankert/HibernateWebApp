@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import entitaetsklassen.Person;
@@ -32,4 +34,26 @@ public class PersonenController {
 		// entspricht http://localhost:8080/HibernateWebApp/personen/liste
 		return "personenliste";
 	}
+	@GetMapping("/addPersonForm") // Child-Mapping
+	public String neuePerson(Model model) {
+		
+		// Personerstellen, welche dann die Formulardaten speichert
+		Person person = new Person();
+		
+		// Person als Key/Value-Paar ans Model anhängen
+		model.addAttribute("person", person);
+		
+		// entspricht http://localhost:8080/HibernateWebApp/personen/addPersonForm
+		return "neuePersonFormular";
+	}
+	@PostMapping("/personSpeichern") // @ModelAttribute holt sich die Daten aus der jsp-Datei
+	public String personSpeichern(@ModelAttribute("person") Person person) {
+		
+		// übergebene Person mit dem Service verknüpfen 
+		personService.personSpeichern(person);
+		
+		// entspricht http://localhost:8080/HibernateWebApp/personen/addPersonForm
+		return "redirect:/personen/liste";
+	}
+	
 }

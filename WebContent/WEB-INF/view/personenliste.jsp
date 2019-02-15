@@ -10,11 +10,14 @@
 <body>
 	<div id="wrapper">
 		<div id="header">
-			<h1>Personen-Liste</h1>
+			<h1>Personen Datenbank</h1>
 		</div>
 
 		<div id="container">
 			<div id="content">
+			
+			<input type="button" value="Neue Person" onclick="window.location.href='addPersonForm'; return false;" class="add-button">
+			
 				<table>
 					<tr>
 						<th>Vorname</th>

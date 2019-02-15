@@ -35,4 +35,15 @@ public class PersonServiceImpl implements PersonService {
 		return personDAO.getPerson();
 	}
 
+
+	/* (non-Javadoc)
+	 * @see service.PersonService#personSpeichern(entitaetsklassen.Person)
+	 */
+	@Override
+	@Transactional
+	public void personSpeichern(Person person) {
+		personDAO.personSpeichern(person);
+		
+	}
+
 }
