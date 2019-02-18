@@ -34,8 +34,22 @@ public class PersonenController {
 		// entspricht http://localhost:8080/HibernateWebApp/personen/liste
 		return "personenliste";
 	}
+	
 	@GetMapping("/addPersonForm") // Child-Mapping
 	public String neuePerson(Model model) {
+		
+		// Personerstellen, welche dann die Formulardaten speichert
+		Person person = new Person();
+		
+		// Person als Key/Value-Paar ans Model anhängen
+		model.addAttribute("person", person);
+		
+		// entspricht http://localhost:8080/HibernateWebApp/personen/addPersonForm
+		return "neuePersonFormular";
+	}
+	
+	@GetMapping("/updatePersonForm") // Child-Mapping
+	public String updatePerson(Model model) {
 		
 		// Personerstellen, welche dann die Formulardaten speichert
 		Person person = new Person();
