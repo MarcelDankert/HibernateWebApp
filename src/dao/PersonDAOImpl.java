@@ -20,7 +20,7 @@ public class PersonDAOImpl implements PersonDAO {
 	private SessionFactory sessionFactory;
 	
 	@Override	
-	public List<Person> getPerson() {
+	public List<Person> getPersonen() {
 		
 		// Hibernate Session starten
 		Session currentSession = sessionFactory.getCurrentSession();

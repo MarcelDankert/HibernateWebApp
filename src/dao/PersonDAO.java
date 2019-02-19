@@ -15,7 +15,7 @@ import entitaetsklassen.Person;
 
 public interface PersonDAO {
 
-		public List<Person> getPerson();
+		public List<Person> getPersonen();
 
 		/**
 		 * @param person

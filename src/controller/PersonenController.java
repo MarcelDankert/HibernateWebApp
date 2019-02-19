@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import entitaetsklassen.Person;
 import service.PersonService;
@@ -26,7 +27,7 @@ public class PersonenController {
 	public String personenAuflisten(Model model) {
 		
 		// Personen über die DAO_Klasse abspeichern
-		List<Person> personen = personService.getPerson();
+		List<Person> personen = personService.getPersonen();
 		
 		// Liste als Key/Value-Paar ans Model anhängen
 		model.addAttribute("personen", personen);
@@ -49,10 +50,10 @@ public class PersonenController {
 	}
 	
 	@GetMapping("/updatePersonForm") // Child-Mapping
-	public String updatePerson(Model model) {
+	public String updatePerson(@RequestParam("personenNr") int personenNr, Model model) {
 		
-		// Personerstellen, welche dann die Formulardaten speichert
-		Person person = new Person();
+		// Person aus der Datenbank holen, um das Formular zu befüllen
+		Person person = personService.getPerson(personenNr);
 		
 		// Person als Key/Value-Paar ans Model anhängen
 		model.addAttribute("person", person);

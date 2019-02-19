@@ -31,8 +31,8 @@ public class PersonServiceImpl implements PersonService {
 	 */
 	@Override
 	@Transactional
-	public List<Person> getPerson() {
-		return personDAO.getPerson();
+	public List<Person> getPersonen() {
+		return personDAO.getPersonen();
 	}
 
 
@@ -44,6 +44,16 @@ public class PersonServiceImpl implements PersonService {
 	public void personSpeichern(Person person) {
 		personDAO.personSpeichern(person);
 		
+	}
+
+
+	/* (non-Javadoc)
+	 * @see service.PersonService#getPerson(int)
+	 */
+	@Override
+	public Person getPerson(int personenNr) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

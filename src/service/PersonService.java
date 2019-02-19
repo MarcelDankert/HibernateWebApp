@@ -13,11 +13,17 @@ import entitaetsklassen.Person;
  */
 public interface PersonService {
 
-	public List<Person> getPerson();
+	public List<Person> getPersonen();
 
 	/**
 	 * @param person
 	 */
-	public void personSpeichern(Person person);	
+	public void personSpeichern(Person person);
+
+	/**
+	 * @param personenNr
+	 * @return
+	 */
+	public Person getPerson(int personenNr);	
 	
 }
