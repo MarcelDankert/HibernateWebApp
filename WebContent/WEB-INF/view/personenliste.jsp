@@ -36,7 +36,7 @@
 							<td>${tempPersonen.vorname}</td>
 							<td>${tempPersonen.nachname}</td>
 							<td>${tempPersonen.land}</td>
-							<td><a href="${updateLink}">Update</a></td>
+							<td><a href="${updateLink}">Update</a> | <a href="${updateLink}">Löschen</a></td>
 						</tr>
 					</c:forEach>
 				</table>
