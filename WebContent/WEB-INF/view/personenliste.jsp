@@ -29,8 +29,8 @@
 					<c:forEach var="tempPersonen" items="${personen}">
 					
 					<!-- Hier legen wir einen Update-Link an, welchen wir mit der ID des Datensatzes füllen -->
-					<c:url var="updateLink" value="/personen/addPersonForm">
-						<c:param name="personId" value="${tempPerson.personenNr}"></c:param>
+					<c:url var="updateLink" value="/personen/updatePersonForm">
+						<c:param name="personenNr" value="${tempPersonen.personenNr}"></c:param>
 					</c:url>
 						<tr>
 							<td>${tempPersonen.vorname}</td>

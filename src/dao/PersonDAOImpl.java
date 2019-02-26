@@ -45,9 +45,24 @@ public class PersonDAOImpl implements PersonDAO {
 		// Hibernate Session starten
 		Session currentSession = sessionFactory.getCurrentSession();
 		
-		// Person speichern
-		currentSession.save(person);
+		// Person speichern oder updaten
+		currentSession.saveOrUpdate(person);
 		
+	}
+
+	/* (non-Javadoc)
+	 * @see dao.PersonDAO#getPersonen(int)
+	 */
+	@Override
+	public Person getPerson(int personenNr) {
+		
+		// Hibernate Session starten
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		// Daten mit PK aus der Datenbank holen
+		Person person = currentSession.get(Person.class, personenNr);
+		
+		return person;
 	}
 
 }

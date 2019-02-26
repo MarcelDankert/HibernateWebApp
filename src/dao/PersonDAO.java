@@ -21,4 +21,10 @@ public interface PersonDAO {
 		 * @param person
 		 */
 		public void personSpeichern(Person person);
+
+		/**
+		 * @param personenNr
+		 * @return
+		 */
+		public Person getPerson(int personenNr);
 }

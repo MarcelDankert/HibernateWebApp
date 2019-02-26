@@ -19,6 +19,9 @@
 			<div id="content">
 			<h2>Person hinzufügen</h2>
 			<form:form action="personSpeichern" modelAttribute="person" method="POST">
+			
+			<!-- Daten mit ID verknüpfen -->
+			<form:hidden path="personenNr"/>
 				<table>
 					<tbody>
 						<tr>

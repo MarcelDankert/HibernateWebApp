@@ -51,9 +51,10 @@ public class PersonServiceImpl implements PersonService {
 	 * @see service.PersonService#getPerson(int)
 	 */
 	@Override
+	@Transactional
 	public Person getPerson(int personenNr) {
 		// TODO Auto-generated method stub
-		return null;
+		return personDAO.getPerson(personenNr);
 	}
 
 }
