@@ -70,5 +70,25 @@ public class PersonenController {
 		// entspricht http://localhost:8080/HibernateWebApp/personen/addPersonForm
 		return "redirect:/personen/liste";
 	}
+	@GetMapping("/delete")
+	public String personLoeschen (@RequestParam("personenNr") int personenNr, Model model) {
+		personService.personLoeschen(personenNr);
+		
+				return "redirect:/personen/liste";
+	}
+	
+    @GetMapping("/suche")
+    public String searchCustomers(@RequestParam("suchname") String suchName,
+                                    Model theModel) {
+
+        // search customers from the service
+        List<Person> personen = personService.personSuchen(suchName);
+                
+        // add the customers to the model
+        theModel.addAttribute("personen", personen);
+
+        return "personenliste";        
+    }
+	
 	
 }

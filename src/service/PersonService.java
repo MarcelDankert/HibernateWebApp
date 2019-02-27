@@ -24,6 +24,17 @@ public interface PersonService {
 	 * @param personenNr
 	 * @return
 	 */
-	public Person getPerson(int personenNr);	
+	public Person getPerson(int personenNr);
+
+	/**
+	 * @param person
+	 */
+	public void personLoeschen(int personenNr);
+
+	/**
+	 * @param suchName
+	 * @return
+	 */
+	public List<Person> personSuchen(String suchName);	
 	
 }

@@ -57,4 +57,26 @@ public class PersonServiceImpl implements PersonService {
 		return personDAO.getPerson(personenNr);
 	}
 
+
+	/* (non-Javadoc)
+	 * @see service.PersonService#personLoeschen(entitaetsklassen.Person)
+	 */
+	@Override
+	@Transactional
+	public void personLoeschen(int personenNr) {
+		personDAO.personLoeschen(personenNr);
+		
+	}
+
+
+	/* (non-Javadoc)
+	 * @see service.PersonService#personSuchen(java.lang.String)
+	 */
+	@Override
+	@Transactional
+	public List<Person> personSuchen(String suchName) {
+		// TODO Auto-generated method stub
+		return personDAO.personSuchen(suchName);
+	}
+
 }

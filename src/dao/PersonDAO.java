@@ -27,4 +27,16 @@ public interface PersonDAO {
 		 * @return
 		 */
 		public Person getPerson(int personenNr);
+
+		/**
+		 * @param personenNr
+		 * @return
+		 */
+		public void personLoeschen(int personenNr);
+
+		/**
+		 * @param suchName
+		 * @return
+		 */
+		public List<Person> personSuchen(String suchName);
 }
