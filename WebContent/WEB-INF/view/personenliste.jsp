@@ -49,7 +49,7 @@
 							<td>${tempPersonen.vorname}</td>
 							<td>${tempPersonen.nachname}</td>
 							<td>${tempPersonen.land}</td>
-							<td><a href="${updateLink}">Update</a> | <!-- Hier fügen wir eine Onclick-Methode hinzu, welche ein Pop-Up fenster erzeug, in dem man das Löschen bestätigen muss -->
+							<td><a href="${updateLink}">Bearbeiten</a> | <!-- Hier fügen wir eine Onclick-Methode hinzu, welche ein Pop-Up fenster erzeug, in dem man das Löschen bestätigen muss -->
 								<a href="${deleteLink}"
 								onclick="if (!(confirm('Sind sie sicher, dass sie diese Person löschen wollen?'))) return false">Löschen</a>
 							</td>
